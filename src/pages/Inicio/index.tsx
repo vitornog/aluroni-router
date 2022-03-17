@@ -1,6 +1,8 @@
 import cardapio from 'Data/cardapio.json';
 import styles from './inicio.module.scss';
 
+// Uma página para exibir pratos randômicos inicialmente
+
 export default function Inicio(){
 
 	let pratosRecomendados = [...cardapio];

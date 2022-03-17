@@ -9,7 +9,9 @@ export default function AppRouter(){
 	return(
 		<main>
 			<Router>
+				{/* Adiciona o menu */}
 				<Menu />
+				{/* Renderiza as demais páginas de acordo com a rota */}
 				<Routes>
 					<Route path='/' element={<PaginaPadrao/>}>
 						<Route index element={<Inicio/>} />

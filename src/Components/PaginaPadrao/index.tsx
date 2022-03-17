@@ -10,6 +10,7 @@ export default function PaginaPadrao() {
 				</div>
 			</header>
 			<div>
+				{/* Renderiza o elemento child da rota caso exista um */}
 				<Outlet />
 			</div>
 		</>
