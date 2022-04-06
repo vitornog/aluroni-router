@@ -3,6 +3,7 @@ import styles from './inicio.module.scss';
 import stylesTema from 'styles/tema.module.scss';
 import nossaCasa from 'assets/nossa_casa.png';
 import { useNavigate } from 'react-router-dom';
+import { Prato } from 'types/Prato';
 
 // Uma página para exibir pratos randômicos inicialmente
 
@@ -13,7 +14,7 @@ export default function Inicio(){
 
 	const navigate = useNavigate();
 
-	function redirecionarParaDetalhes(prato: typeof cardapio[0]){
+	function redirecionarParaDetalhes(prato: Prato){
 		navigate(`/prato/${prato.id}`, {state:{prato}, replace: false});
 	}
 
