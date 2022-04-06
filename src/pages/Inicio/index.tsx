@@ -2,6 +2,7 @@ import cardapio from 'Data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTema from 'styles/tema.module.scss';
 import nossaCasa from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 // Uma página para exibir pratos randômicos inicialmente
 
@@ -9,6 +10,12 @@ export default function Inicio(){
 
 	let pratosRecomendados = [...cardapio];
 	pratosRecomendados = pratosRecomendados.sort(()=> 0.5-Math.random()).splice(0,3);
+
+	const navigate = useNavigate();
+
+	function redirecionarParaDetalhes(prato: typeof cardapio[0]){
+		navigate(`/prato/${prato.id}`, {state:{prato}, replace: false});
+	}
 
 	return(
 		<section>
@@ -19,7 +26,7 @@ export default function Inicio(){
 						<div className={styles.recomendado__imagem}>
 							<img src={item.photo} alt={item.title} />
 						</div>
-						<button className={styles.recomendado__botao}>Ver mais</button>
+						<button onClick={()=>redirecionarParaDetalhes(item)} className={styles.recomendado__botao}>Ver mais</button>
 					</div>
 				))}
 			</div>
