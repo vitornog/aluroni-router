@@ -1,5 +1,7 @@
 import cardapio from 'Data/cardapio.json';
 import styles from './inicio.module.scss';
+import stylesTema from 'styles/tema.module.scss';
+import nossaCasa from 'assets/nossa_casa.png';
 
 // Uma página para exibir pratos randômicos inicialmente
 
@@ -20,6 +22,18 @@ export default function Inicio(){
 						<button className={styles.recomendado__botao}>Ver mais</button>
 					</div>
 				))}
+			</div>
+			<h3>
+				Nossa Casa
+			</h3>
+			<div className={styles.nossaCasa}>
+				<img src={nossaCasa} />
+				<div className={styles.nossaCasa__endereco}>
+					Rua Vergueiro, 3185
+					<br/>
+					<br/>
+					Vila Mariana - SP
+				</div>
 			</div>
 		</section>
 	);
